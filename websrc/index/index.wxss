@@ -82,7 +82,7 @@
   width: 48%;
   position: relative;
   float: left;
-  margin-left: 16rpx;
+  margin-left: 10rpx;
   margin-bottom: 10rpx;
   font-size: 20rpx;
 }
