@@ -5,7 +5,7 @@ Page({
     indicatorDots: true,
     vertical: false,
     autoplay: true,
-    loop: true,
+    circular: true,
     interval: 3000,
     duration: 1200,
     sliderData: []
