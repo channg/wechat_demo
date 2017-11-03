@@ -1,0 +1,33 @@
+<swiper indicator-dots="{{indicatorDots}}" class="swipper"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{sliderData}}">
+    <swiper-item>
+      <image src="{{item.picture}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view id="blocks">
+  <block class="list" wx:for="{{blockData}}">
+    <view class="item">
+      <view class="item-hd">
+        <text class="name">{{item.type.cname}}</text>
+      </view>
+      <view class="list-bd">
+        <block class="list" wx:for="{{item.items}}">
+          <navigator data-href="/{{item.id}}" class="link">
+            <view class="cover">
+              <text class="cate">{{item.classification.cname}}</text>
+              <image src="{{item.pictures.img}}" class="slide-image"/>
+              <view class="title">{{item.name}}</view>
+            </view>
+            <view class="info">
+              <view class="name">{{item.userinfo.nickName}}</view>
+              <view class="person_num">{{item.person_num}}</view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </view>
+  </block>
+</view>
