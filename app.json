@@ -1,11 +1,12 @@
 {
   "pages":[
     "websrc/index/index",
-    "websrc/game/index"
+    "websrc/game/index",
+    "websrc/room/room"
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "永喜",
+    "navigationBarTitleText": "熊猫直播",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
   },
@@ -32,5 +33,5 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-  "debug": false
+  "debug": true
 }

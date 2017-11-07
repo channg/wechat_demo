@@ -2,7 +2,9 @@
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
   <block wx:for="{{sliderData}}">
     <swiper-item>
-      <image src="{{item.picture}}" class="slide-image"/>
+      <navigator url="../room/room?roomid={{item.roomid}}">
+        <image src="{{item.picture}}" class="slide-image"/>
+      </navigator>
     </swiper-item>
   </block>
 </swiper>
@@ -15,7 +17,7 @@
       </view>
       <view class="list-bd">
         <scroll-view class="list" wx:for-items="{{item.items}}">
-          <view data-href="/{{item.id}}" class="link">
+          <navigator url="../room/room?roomid={{item.id}}" class="link">
             <view class="cover">
               <text class="cate">{{item.classification.cname}}</text>
               <image src="{{item.pictures.img}}" class="slide-image"/>
@@ -25,7 +27,7 @@
               <view class="name">{{item.userinfo.nickName}}</view>
               <view class="person_num">{{item.person_num}}</view>
             </view>
-          </view>
+          </navigator>
         </scroll-view>
       </view>
     </view>

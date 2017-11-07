@@ -21,8 +21,21 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "房间页",
+					"pathName": "websrc/room/room",
+					"query": "roomid=97513"
+				},
+				{
+					"id": -1,
+					"name": "列表页",
+					"pathName": "websrc/game/index",
+					"query": "cate=lol"
+				}
+			]
 		}
 	}
 }

@@ -1,3 +1,28 @@
-<view class="game">
-  
+<div id="cate">
+  <scroll-view class="type-navbar" scroll-x="true">
+    <view class="type-box" wx:for-items="{{categories}}" wx:key="id">
+      <view id="{{item.id}}" data-ename="{{item.ename}}" class="type-navbar-item {{id == item.id ? 'type-item-on' : ''}}" bindtap="tabClick">
+        {{item.cname}}
+      </view>
+    </view>
+  </scroll-view>
+</div>
+<view id="list">
+  <scroll-view class="item" bindscroll="aaa">
+    <block wx:for="{{items}}">
+      <view class="list">
+        <navigator url="../room/room?roomid={{item.id}}" class="link">
+          <view class="cover">
+            <text class="cate">{{item.classification.cname}}</text>
+            <image src="{{item.pictures.img}}" class="slide-image"/>
+            <view class="title">{{item.name}}</view>
+          </view>
+          <view class="info">
+            <view class="name">{{item.userinfo.nickName}}</view>
+            <view class="person_num">{{item.person_num}}</view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+  </scroll-view>
 </view>

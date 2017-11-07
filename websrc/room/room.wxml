@@ -1,0 +1,35 @@
+<view class="room-content">
+  <view id="live-player" class="section tc">
+    <video src="{{roomData.videoinfo.address}}" class="h5-live-player"  controls poster="{{roomData.roominfo.pictures.img}}"></video>
+  </view>
+  <view class="room-owner">
+    <view class="awnerInfo">
+      <view class="name">{{roomData.hostinfo.name}}</view>
+      <view class="intro">{{roomData.roominfo.name}}</view>
+    </view>
+    <view class="roomInfo">
+      <view class="room-id">{{roomData.roominfo.id}}</view>
+      <view class="count">{{roomData.roominfo.person_num}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="main-content">
+  <view class="item">
+    <block wx:for="{{items}}">
+      <view class="list">
+        <navigator url="../room/room?roomid={{item.id}}" class="link">
+          <view class="cover">
+            <text class="cate" wx:if="{{item.classification.cname}}">{{item.classification.cname}}</text>
+            <image src="{{item.pictures.img}}" class="slide-image"/>
+            <view class="title">{{item.name}}</view>
+          </view>
+          <view class="info">
+            <view class="name">{{item.userinfo.nickName}}</view>
+            <view class="person_num">{{item.person_num}}</view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+  </view>
+</view>

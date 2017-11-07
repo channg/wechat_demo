@@ -1,30 +1,52 @@
 @import "../common/index.wxss";
 
-.type-navbar{
-  white-space: nowrap;
-  height: 88rpx;
+#live-player {}
+#live-player .h5-live-player {
   width: 100%;
+  vertical-align:top;
+}
+
+.room-owner {
+  padding: 10rpx;
   background-color: #fff;
+  border-bottom: 1px solid #e2e2e2;
+  display: flex;
 }
-::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  color: transparent;
+.awnerInfo {
+  flex: 1;
+  margin: 0 12rpx;
 }
-.type-box{
-  width:160rpx;
-  box-sizing: content-box;
-  font-size: 24rpx;
-  line-height: 84rpx;
-  text-align: center;
-  display: inline-block;
+.awnerInfo .name{
+  margin: 0;
+  padding: 0;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: normal;
+}
+.awnerInfo .intro{
+  margin: 0;
+  padding: 0;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 20rpx;
+  color: #ababab;
   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
-.type-navbar-item{
-  border-bottom: 4rpx solid #fff;
+.roomInfo {
+  width: 210rpx;
+  text-align: right;
 }
-.type-item-on{
-  border-bottom: 4rpx solid #e64340;
+.roomInfo .count, 
+.roomInfo .room-id {
+  font-size: 20rpx;
+  color: #ababab;
+  height: 38rpx;
+  line-height: 38rpx;
+  position: relative;
 }
 
 .item .name {
@@ -167,9 +189,7 @@
   text-overflow: ellipsis;
   white-space: nowrap
 }
-#list{
-  height: 400rpx;
-}
+
 .item .list .info .person_num {
   position: absolute;
   right: 0;
