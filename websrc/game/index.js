@@ -1,19 +1,37 @@
+var app = getApp();
+
+var pageno = 1;
+var pagecount = -1;
+var PAGENUM = 10;
+var cate = 'lol';
+
 Page({
 
   tabClick: function(e) {
-    this.setData({
+    var that = this;
+    that.setData({
       id: e.currentTarget.id,
       ename: e.currentTarget.dataset.ename
     });
-    this.getCateList(1, this.data.ename);
-  },
-  
-  aaa: function(e) {
-    console.log(e);
+    pageno = 1;
+    pagecount = -1;
+    cate = this.data.ename;
+    this.loadMore();
   },
 
-  onLoad: function() {
+  onReachBottom: function(e) {
     var that = this;
+    if(pageno > pagecount) {
+      return;
+    }
+    this.loadMore();
+  },
+
+  onLoad: function(params) {
+    var that = this;
+    cate = params.cate;
+
+    console.log(pagecount);
 
     wx.request({
       url: 'https://api.m.panda.tv/index.php',
@@ -44,14 +62,13 @@ Page({
           categories: categories,
           id: 0
         });
-        that.getCateList(1, 'lol');
       }
     })
+
+    this.loadMore();
   },
 
-  getCateList: function(pageno, cate) {
-    console.log(cate);
-
+  loadMore: function() {
     var that = this;
     wx.request({
       url: 'https://api.m.panda.tv/ajax_get_live_list_by_cate',
@@ -66,11 +83,10 @@ Page({
         'Accept': 'application/json'
       },
       success: function(res) {
-        that.setData({
-          items: [],
-          loadingMoreHidden: true
-        });
         var items = [];
+        if (pagecount === -1) {
+          pagecount = Math.ceil(res.data.data.total / PAGENUM);
+        }
         if (res.data.errno != 0 || res.data.data.total == 0) {
           that.setData({
             loadingMoreHidden: false,
@@ -83,6 +99,7 @@ Page({
         that.setData({
           items: items,
         });
+        pageno++;
       }
     })
   }

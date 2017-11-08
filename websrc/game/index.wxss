@@ -27,40 +27,9 @@
   border-bottom: 4rpx solid #e64340;
 }
 
-.item .name {
-  display: inline-block;
-  position: relative
-}
-
-.item .name::before,
-.item .name::after {
-  content: '';
-  width: 64rpx;
-  height: 2px;
-  border-radius: 2px;
-  background-color: #1cd39b;
-  position: absolute
-}
-
-.item .name::before {
-  left: -40rpx;
-  top: 50%;
-  -webkit-transform: translateX(-100%) translateY(-50%);
-  -ms-transform: translateX(-100%) translateY(-50%);
-  transform: translateX(-100%) translateY(-50%)
-}
-
-.item .name::after {
-  right: -40rpx;
-  top: 50%;
-  -webkit-transform: translateX(100%) translateY(-50%);
-  -ms-transform: translateX(100%) translateY(-50%);
-  transform: translateX(100%) translateY(-50%)
-}
-
 .item {
   margin: 0;
-  padding: 20rpx;
+  padding: 20rpx 10rpx;
 }
 
 .item:before,
@@ -94,7 +63,6 @@
   overflow: hidden;
   position: relative
 }
-
 .item .list .cover img {
   display: block;
   width: 100%;
@@ -166,9 +134,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap
-}
-#list{
-  height: 400rpx;
 }
 .item .list .info .person_num {
   position: absolute;
