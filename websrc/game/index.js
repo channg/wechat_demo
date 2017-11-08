@@ -96,9 +96,16 @@ Page({
         for (var i = 0; i < res.data.data.items.length; i++) {
           items.push(res.data.data.items[i]);
         }
-        that.setData({
-          items: items,
-        });
+        if (that.data.items){
+          that.setData({
+            items: that.data.items.concat(items),
+          });
+        }else{
+          that.setData({
+            items: items
+          });
+        }
+        
         pageno++;
       }
     })
